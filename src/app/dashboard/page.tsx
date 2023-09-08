@@ -50,11 +50,6 @@ export default function Page() {
     }, []);
 
 
-    const handleSelectedInstitution = (event: SelectChangeEvent) => {
-        console.log(event.target.value)
-        setSelectedInstitution(event.target.value)
-    }
-
     let USDollar = new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: 'USD',
@@ -62,7 +57,7 @@ export default function Page() {
     });
 
     const handleSearchDetails = () => {
-        console.log("Selected institution: {}", selectedInstitution);
+        console.log("Institution: {}", selectedInstitution);
         console.log("Fecha Inicio: {}", selectedStartDate?.format('YYYY-MM-DD'));
         console.log("Fecha Fin: {}", selectedEndDate?.format('YYYY-MM-DD'));
 
@@ -103,7 +98,7 @@ export default function Page() {
                                     id="demo-simple-select"
                                     label="Age"
                                     value={selectedInstitution}
-                                    onChange={(newValue) => handleSelectedInstitution}
+                                    onChange={(newValue) => setSelectedInstitution}
                                 >
                                     {
                                         institutionData.map((data: Institution) => {

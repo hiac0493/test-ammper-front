@@ -102,8 +102,8 @@ export default function Page() {
                                     labelId="demo-simple-select-label"
                                     id="demo-simple-select"
                                     label="Age"
-                                    onChange={handleSelectedInstitution}
                                     value={selectedInstitution}
+                                    onChange={(newValue) => handleSelectedInstitution}
                                 >
                                     {
                                         institutionData.map((data: Institution) => {

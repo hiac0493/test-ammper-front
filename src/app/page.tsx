@@ -8,17 +8,9 @@ import Box from "@mui/material/Box";
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
+import {Button, TextField} from "@mui/material";
 
 export default function Home() {
-
-    const Item = styled(Paper)(({theme}) => ({
-        backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-        ...theme.typography.body2,
-        padding: theme.spacing(1),
-        textAlign: 'center',
-        color: theme.palette.text.secondary,
-        flexGrow: 1,
-    }));
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -45,10 +37,18 @@ export default function Home() {
             });
     };
 
-    return (
-        <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    const handleUsernameChange = (event) => {
+        setUsername(event.target.value);
+    };
 
-            <Box>
+    const handlePasswordChange = (event) => {
+        setPassword(event.target.value);
+    };
+
+    return (
+        <main className="flex flex-col p-24">
+
+            <Box component="form">
                 <Grid
                     container
                     direction="column"
@@ -56,28 +56,24 @@ export default function Home() {
                     spacing={3}
                     alignItems="center"
                 >
-                    <Grid item xs={12}>
-                        <Item><input
-                            type="text"
-                            placeholder="Username"
-                            onChange={(event) => setUsername(event.target.value)}
-                        /></Item>
-                    </Grid>
+                    <TextField fullWidth
+                               type="text"
+                               id="username"
+                               name="username"
+                               required={true}
+                               placeholder="Username"
+                               onChange={handleUsernameChange}
+                    />
 
-                    <Grid item xs={12}>
-                        <Item><input
-                            type="password"
-                            placeholder="Password"
-                            onChange={(event) => setPassword(event.target.value)}
-                        /></Item>
-                    </Grid>
-
-                    <Grid item xs={12}>
-                        <Item>
-                            <button onClick={handleLogin}>Login</button>
-                        </Item>
-                    </Grid>
-
+                    <TextField fullWidth
+                               type="password"
+                               id="password"
+                               required={true}
+                               name="password"
+                               placeholder="Password"
+                               onChange={handlePasswordChange}
+                    />
+                    <Button variant="contained" color="primary" onClick={handleLogin}>Login</Button>
                 </Grid>
             </Box>
 

@@ -37,14 +37,6 @@ export default function Home() {
             });
     };
 
-    const handleUsernameChange = (event) => {
-        setUsername(event.target.value);
-    };
-
-    const handlePasswordChange = (event) => {
-        setPassword(event.target.value);
-    };
-
     return (
         <main className="flex flex-col p-24">
 

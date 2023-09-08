@@ -65,7 +65,7 @@ export default function Home() {
                                placeholder="Password"
                                onChange={(event) => setPassword(event.target.value)}
                     />
-                    <Button variant="contained" color="primary" onClick={handleLogin}>Login</Button>
+                    <Button variant="contained" size="large" fullWidth onClick={handleLogin}>Login</Button>
                 </Grid>
             </Box>
 

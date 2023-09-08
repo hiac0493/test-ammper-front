@@ -62,6 +62,7 @@ export default function Page() {
     });
 
     const handleSearchDetails = () => {
+        console.log("Selected institution: {}", selectedInstitution);
         console.log("Fecha Inicio: {}", selectedStartDate?.format('YYYY-MM-DD'));
         console.log("Fecha Fin: {}", selectedEndDate?.format('YYYY-MM-DD'));
 

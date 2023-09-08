@@ -62,7 +62,7 @@ export default function Home() {
                                name="username"
                                required={true}
                                placeholder="Username"
-                               onChange={handleUsernameChange}
+                               onChange={(event) => setUsername(event.target.value)}
                     />
 
                     <TextField fullWidth
@@ -71,7 +71,7 @@ export default function Home() {
                                required={true}
                                name="password"
                                placeholder="Password"
-                               onChange={handlePasswordChange}
+                               onChange={(event) => setPassword(event.target.value)}
                     />
                     <Button variant="contained" color="primary" onClick={handleLogin}>Login</Button>
                 </Grid>
